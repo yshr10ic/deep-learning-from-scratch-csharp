@@ -6,4 +6,8 @@
     <RootNamespace>deep_learning_from_scratch_csharp</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="4.9.0" />
+  </ItemGroup>
+
 </Project>
