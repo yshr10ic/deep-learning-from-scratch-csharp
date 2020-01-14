@@ -1,4 +1,5 @@
 using System;
+using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace deep_learning_from_scratch_csharp.ch02
 {
@@ -6,13 +7,13 @@ namespace deep_learning_from_scratch_csharp.ch02
     {
         public double And(double x1, double x2)
         {
-            double w1 = 0.5;
-            double w2 = 0.5;
-            double theta = 0.7;
+            var x = DenseMatrix.OfArray(new double[, ] {{x1, x2}});
+            var w = DenseMatrix.OfArray(new double[, ] {{0.5}, {0.5}});
+            double b = -0.7;
 
-            double tmp = x1 * w1 + x2 * w2;
+            double tmp = (x * w + b)[0, 0];
 
-            if (tmp <= theta)
+            if (tmp <= 0)
             {
                 return 0;
             }
